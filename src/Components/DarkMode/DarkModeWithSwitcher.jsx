@@ -29,8 +29,7 @@ export default function DarkModeWithSwitcher (){
         <button onClick={handleThemeSwitcher} className="shadow-lg bg-slate-100 dark:bg-slate-800 dark:text-white px-6 py-2 rounded-lg">SWICH MODE</button>
 
         <p className="w-[38rem] dark:text-slate-200 mt-4">
-        This feature works when darkMode : 'class', is set in the tailwind.config.js and when it's manually toggled 
-        from light and dark mode by setting class="dark" in the html tag
+        This feature works when darkMode : 'class', is set in the tailwind.config.js and setting a className="dark" withing the body tag and using useEffect, useState and a function in the jsx to handle the switching between themes
         </p>
         <div class="mt-8 bg-white dark:bg-slate-800 rounded-lg px-6 py-8 ring-1 ring-slate-900/5 shadow-xl">
           <div>
