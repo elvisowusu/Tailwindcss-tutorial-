@@ -6,13 +6,8 @@ export default function DarkModeWithSwitcher (){
     // const [theme, setTheme] = useState("light");
 
     // useEffect(() => {
-    //     if(theme==="dark"){
-    //         //sets the document to darkMode when theme is dark
-    //         document.documentElement.classList.add("dark");
-    //     }else{
-    //         //removes the darkmode from the document when theme is light
-    //         document.documentElement.classList.remove("dark")
-    //     }
+    //     // makes theme dark when it's dark else remove it 
+    //     document.documentElement.classList.toggle("dark", theme === "dark");
     // },[theme]); 
 
     // const handleThemeSwitcher =()=>{
