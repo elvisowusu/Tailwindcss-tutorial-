@@ -39,13 +39,6 @@ export default function DarkModeAllFeatures() {
       >
         SWICH MODE
       </button>
-
-      <p className="w-[38rem] dark:text-slate-200 mt-4">
-        This feature works when darkMode : 'class', is set in the
-        tailwind.config.js and setting a className="dark" withing the body tag
-        and using useEffect, useState and a function in the jsx to handle the
-        switching between themes
-      </p>
       <div class="mt-8 bg-white dark:bg-slate-800 rounded-lg px-6 py-8 ring-1 ring-slate-900/5 shadow-xl">
         <div>
           <span class="inline-flex items-center justify-center p-2 bg-indigo-500 rounded-md shadow-lg">
