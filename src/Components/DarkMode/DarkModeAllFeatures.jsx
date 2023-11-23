@@ -1,38 +1,31 @@
 import React, { useState, useEffect } from "react";
 
 export default function DarkModeAllFeatures() {
-  // Retrieve the theme preference from localStorage or default to "light"
-  const storedTheme = localStorage.getItem("theme");
-  const [theme, setTheme] = useState(storedTheme || "light");
-
-  useEffect(() => {
-    // Update the document's classList based on the current theme
-    document.documentElement.classList.toggle("dark", theme === "dark");
-
-    // Save the current theme preference to localStorage
-    localStorage.setItem("theme", theme);
-  }, [theme]);
-
-  const handleThemeSwitcher = () => {
-    // Toggle between "light" and "dark" themes
-    setTheme((prevTheme) => (prevTheme === "dark" ? "light" : "dark"));
-  };
-  useEffect(() => {
-    // Check if the theme is set to "dark" in localStorage or if the user prefers dark mode based on their system settings
-    const prefersDarkMode = window.matchMedia(
-      "(prefers-color-scheme: dark)",
-    ).matches;
-    document.documentElement.classList.toggle(
-      "dark",
-      localStorage.theme === "dark" || (!localStorage.theme && prefersDarkMode),
-    );
-
-    // Cleanup function for useEffect
-    return () => {
-      // Remove the "theme" key from localStorage when the component unmounts
-      localStorage.removeItem("theme");
-    };
-  }, []);
+   // Retrieve the theme preference from localStorage or default to "light"
+   const storedTheme = localStorage.getItem("theme");
+   const [theme, setTheme] = useState(storedTheme || "light");
+ 
+   // Effect to handle theme switching and update the document
+   useEffect(() => {
+     document.documentElement.classList.toggle("dark", theme === "dark");
+     localStorage.setItem("theme", theme);
+   }, [theme]);
+ 
+   // Effect to check and apply theme based on user preferences on mount
+   useEffect(() => {
+     const prefersDarkMode = window.matchMedia("(prefers-color-scheme: dark)").matches;
+     document.documentElement.classList.toggle("dark", localStorage.theme === "dark" || (!localStorage.theme && prefersDarkMode));
+ 
+     // Cleanup function for useEffect
+     return () => {
+       localStorage.removeItem("theme");
+     };
+   }, []);
+ 
+   // Function to toggle between "light" and "dark" themes
+   const handleThemeSwitcher = () => {
+     setTheme((prevTheme) => (prevTheme === "dark" ? "light" : "dark"));
+   };
 
   return (
     <div className="flex items-center flex-col dark:bg-slate-500 h-[90vh]">
