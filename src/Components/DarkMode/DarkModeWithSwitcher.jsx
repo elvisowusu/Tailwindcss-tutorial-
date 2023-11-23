@@ -3,21 +3,40 @@ import React,{useState,useEffect} from "react";
 
 export default function DarkModeWithSwitcher (){
 
-    const [theme, setTheme] = useState("light");
+    // const [theme, setTheme] = useState("light");
 
-    useEffect(() => {
-        if(theme==="dark"){
-            //sets the document to darkMode when theme is dark
-            document.documentElement.classList.add("dark");
-        }else{
-            //removes the darkmode from the document when theme is light
-            document.documentElement.classList.remove("dark")
-        }
-    },[theme]); 
+    // useEffect(() => {
+    //     if(theme==="dark"){
+    //         //sets the document to darkMode when theme is dark
+    //         document.documentElement.classList.add("dark");
+    //     }else{
+    //         //removes the darkmode from the document when theme is light
+    //         document.documentElement.classList.remove("dark")
+    //     }
+    // },[theme]); 
 
-    const handleThemeSwitcher =()=>{
-        setTheme(theme==="dark"? "light":"dark")
-    }
+    // const handleThemeSwitcher =()=>{
+    //     setTheme(theme==="dark"? "light":"dark")
+    // }
+
+    //complete code which maintains the mode even after refreshing the page
+    // Retrieve the theme preference from localStorage or default to "light"
+  const storedTheme = localStorage.getItem("theme");
+  const [theme, setTheme] = useState(storedTheme || "light");
+
+  useEffect(() => {
+    // Update the document's classList based on the current theme
+    document.documentElement.classList.toggle("dark", theme === "dark");
+
+    // Save the current theme preference to localStorage
+    localStorage.setItem("theme", theme);
+  }, [theme]);
+
+  const handleThemeSwitcher = () => {
+    // Toggle between "light" and "dark" themes
+    setTheme((prevTheme) => (prevTheme === "dark" ? "light" : "dark"));
+  };
+
 
 
     return(
