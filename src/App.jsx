@@ -5,13 +5,14 @@ import './App.css'
 import {HoverFocusAndOtherStates} from './Components/HoverFocusandOtherStates'
 import DarkMode from './Components/DarkMode/DarkMode'
 import DarkModeWithSwitcher from './Components/DarkMode/DarkModeWithSwitcher'
+import DarkModeWithSystemPreference from './Components/DarkMode/DarkModeWithSystemPreference'
 
 
 function App() {
 
   return (
     <div className='mb-[5rem]'>
-        <DarkModeWithSwitcher/>
+      <DarkModeWithSystemPreference/>
     </div>
   )
 }

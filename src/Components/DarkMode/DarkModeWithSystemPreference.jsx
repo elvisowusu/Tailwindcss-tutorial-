@@ -2,12 +2,28 @@ import React,{useState,useEffect} from "react";
 
 
 export default function DarkModeWithSystemPreference (){
-
+    useEffect(() => {
+        // On page load or when changing themes, best to add inline in `head` to avoid FOUC
+if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+    document.documentElement.classList.add('dark')
+  } else {
+    document.documentElement.classList.remove('dark')
+  }
+  
+  // Whenever the user explicitly chooses light mode
+  localStorage.theme = 'light'
+  
+  // Whenever the user explicitly chooses dark mode
+  localStorage.theme = 'dark'
+  
+  // Whenever the user explicitly chooses to respect the OS preference
+  localStorage.removeItem('theme')
+    }, [])
 
     return(
         <div className="flex items-center flex-col dark:bg-slate-500 h-[90vh]">
         <h1 className="mainHeading text-3xl text-center my-4 underline font-bold dark:text-slate-300">
-          DARK MODE WHICH OCCURS WHEN A BUTTON IS CLICKED 
+          DARK MODE BY SYSTEM PREFERENCE
         </h1>
         <p className="w-[38rem] dark:text-slate-200 mt-4">
         This feature works when darkMode : 'class', is set in the tailwind.config.js and setting a className="dark" withing the body tag and using useEffect, useState and a function in the jsx to handle the switching between themes
