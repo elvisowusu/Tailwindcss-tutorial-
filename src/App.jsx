@@ -3,7 +3,8 @@ import image from './assets/sign In.png'
 import {AiOutlineArrowRight} from 'react-icons/ai'
 import './App.css'
 import {HoverFocusAndOtherStates} from './Components/HoverFocusandOtherStates'
-import DarkMode from './Components/DarkMode'
+import DarkMode from './Components/DarkMode/DarkMode'
+
 
 function App() {
 
