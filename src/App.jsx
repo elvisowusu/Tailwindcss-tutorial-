@@ -13,7 +13,7 @@ function App() {
 
   return (
     <div className='mb-[5rem]'>
-      <DarkModeAllFeatures/>
+      <DarkModeWithSystemPreference/>
     </div>
   )
 }
