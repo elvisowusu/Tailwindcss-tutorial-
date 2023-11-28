@@ -5,7 +5,7 @@
 /* using custom styles with tailwindcss @ layer directive */
 @layer base {
   h1 {
-    @apply text-[2rem] text-blue-300 underline font-bold;
+    @apply text-[2rem] text-blue-300 underline font-bold text-center;
   }
   p {
     @apply text-xl text-red-300 italic;

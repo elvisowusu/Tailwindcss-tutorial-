@@ -9,12 +9,13 @@ import DarkModeWithSystemPreference from './Components/CORE CONCEPTS/DarkMode/Da
 import DarkModeAllFeatures from './Components/CORE CONCEPTS/DarkMode/DarkModeAllFeatures'
 import { ReusingStyles } from './Components/CORE CONCEPTS/ReusingStyles'
 import { FunctionsAndDirectives } from './Components/CORE CONCEPTS/Function&Directives'
+import { Configuration } from './Components/CUSTOMIZATION/Configuration'
 
 function App() {
 
   return (
     <div className='mb-[5rem]'>
-      <FunctionsAndDirectives/>
+      <Configuration />
     </div>
   )
 }
