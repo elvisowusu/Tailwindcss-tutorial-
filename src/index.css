@@ -1,3 +1,28 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* using custom styles with tailwindcss @ layer directive */
+@layer base {
+  h1 {
+    @apply text-[2rem] text-blue-300 underline font-bold;
+  }
+  p {
+    @apply text-xl text-red-300 italic;
+  }
+}
+
+@layer components {
+  .paragraph {
+    @apply text-center text-xl text-blue-400 font-bold;
+  }
+}
+
+@layer utilities {
+  .filter-none {
+    filter: none;
+  }
+  .filter-grayscale {
+    filter: grayscale(100%);
+  }
+}
