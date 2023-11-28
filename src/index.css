@@ -20,8 +20,8 @@
 
 /* This adds normal styles to the utility classes with */
 @layer utilities {
-  .no-filter {
-    text-align: left;
+  .blueText {
+    color: blue;
   }
   .filter-grayscale {
     background-color: red;

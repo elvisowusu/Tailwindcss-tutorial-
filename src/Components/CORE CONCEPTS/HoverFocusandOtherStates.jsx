@@ -1,5 +1,4 @@
-
-import image from '../assets/sign In.png'
+import image from '../../assets/sign In.png'
 import {AiOutlineArrowRight} from 'react-icons/ai'
 export const HoverFocusAndOtherStates =()=>{
   return (
